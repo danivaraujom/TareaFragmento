@@ -2,4 +2,5 @@
     <string name="app_name">TareaFragmento</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Texto">Texto que ingresaste</string>
 </resources>

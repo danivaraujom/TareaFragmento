@@ -25,20 +25,22 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        FragmentManager fragmentManager= getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.fragmentContainerView,secondFragment);
-//        fragmentTransaction.addToBackStack(null);//Permite el retroceso al pulsar atras
 
         EditText editText= findViewById(R.id.editTextTextMultiLine);
         Button button=findViewById(R.id.button);
-        Bundle bundle= new Bundle();
-        bundle.putString("Ingresa el texto",editText.getText().toString());
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fragmentTransaction.add(R.id.fragmentContainerView, BlankFragment.class,bundle).commit();
+                String inputText = editText.getText().toString();
+                Bundle bundle= new Bundle();
+                bundle.putString("inputText", inputText);
+
+                BlankFragment blankFragment= new BlankFragment();
+                blankFragment.setArguments(bundle);
+                FragmentManager fragmentManager= getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.fragmentContainerView,BlankFragment.class,bundle).commit();
             }
         });
     }

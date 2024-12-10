@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".BlankFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="741dp"
+        android:id="@+id/txtFragment"
+        android:layout_width="430dp"
+        android:layout_height="match_parent"
         android:background="#9CE4EB"
-        android:text="@string/hello_blank_fragment"
+        android:text="@string/Texto"
         android:textAlignment="center" />
 
 </FrameLayout>
